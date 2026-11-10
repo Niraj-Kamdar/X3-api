@@ -1,0 +1,35 @@
+[package]
+name = "x3-apple"
+description = "Apple built-in speech for Voice Studio: AVSpeechSynthesizer TTS and SpeechAnalyzer STT (macOS only; stubs elsewhere)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+build = "build.rs"
+
+[dependencies]
+x3-core.workspace = true
+async-trait.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tempfile.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+
+[target.'cfg(target_os = "macos")'.dependencies]
+block2 = "0.6"
+objc2 = "0.6"
+objc2-foundation = { version = "0.3", default-features = false, features = ["std", "NSString", "NSArray", "NSObject"] }
+objc2-avf-audio = { version = "0.3", default-features = false, features = [
+    "std",
+    "block2",
+    "AVSpeechSynthesis",
+    "AVAudioBuffer",
+    "AVAudioFormat",
+    "AVAudioTypes",
+] }
+
+# Build dependencies are resolved for the host; this is only pulled in when
+# building on a Mac (which is the only place the Swift bridge can build).
+[target.'cfg(target_os = "macos")'.build-dependencies]
+swift-rs = { version = "1.0.9", features = ["build"] }
