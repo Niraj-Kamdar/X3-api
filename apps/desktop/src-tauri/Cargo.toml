@@ -1,0 +1,27 @@
+[package]
+name = "voice-studio"
+description = "Voice Studio menu-bar app (Tauri 2)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[lib]
+name = "voice_studio_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+x3-core.workspace = true
+x3-server.workspace = true
+x3-vault.workspace = true
+x3-providers.workspace = true
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tauri = { version = "2", features = ["tray-icon"] }
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true

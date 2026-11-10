@@ -1,0 +1,52 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/x3-core",
+    "crates/x3-vault",
+    "crates/x3-providers",
+    "crates/x3-apple",
+    "crates/x3-server",
+    "crates/x3-cli",
+    "apps/desktop/src-tauri",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "UNLICENSED"
+repository = "https://github.com/Niraj-kamdar/x3-api"
+rust-version = "1.85"
+
+[workspace.dependencies]
+x3-core = { path = "crates/x3-core" }
+x3-vault = { path = "crates/x3-vault" }
+x3-providers = { path = "crates/x3-providers" }
+x3-apple = { path = "crates/x3-apple" }
+x3-server = { path = "crates/x3-server" }
+
+anyhow = "1"
+async-trait = "0.1"
+axum = { version = "0.8", features = ["multipart"] }
+bytes = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "serde"] }
+clap = { version = "4", features = ["derive", "env"] }
+hex = "0.4"
+hound = "3.5"
+http = "1"
+rand = "0.8"
+reqwest = { version = "0.13", features = ["json", "multipart", "query"] }
+rmcp = { version = "3.9", default-features = false }
+schemars = "1"
+secrecy = "0.10"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+sqlx = { version = "0.8", default-features = false, features = ["runtime-tokio", "sqlite", "migrate", "macros"] }
+tempfile = "3"
+thiserror = "2"
+tokio = { version = "1", features = ["full"] }
+tokio-util = "0.7"
+tower = { version = "0.5", features = ["util"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+wiremock = "0.6"

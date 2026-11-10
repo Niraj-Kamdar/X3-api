@@ -1,0 +1,18 @@
+[package]
+name = "x3-core"
+description = "Shared types, engine traits, alias router, usage and budgets for Voice Studio"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+async-trait.workspace = true
+chrono.workspace = true
+hound.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+tokio.workspace = true

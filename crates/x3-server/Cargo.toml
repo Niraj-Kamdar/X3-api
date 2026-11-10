@@ -1,0 +1,37 @@
+[package]
+name = "x3-server"
+description = "Voice Studio local server: OpenAI-compatible HTTP API and MCP (Streamable HTTP) on 127.0.0.1"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+x3-core.workspace = true
+x3-vault.workspace = true
+x3-providers.workspace = true
+x3-apple.workspace = true
+anyhow.workspace = true
+axum.workspace = true
+chrono.workspace = true
+hex.workspace = true
+http.workspace = true
+rand.workspace = true
+rmcp = { workspace = true, features = ["server", "macros", "schemars", "transport-streamable-http-server"] }
+schemars.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+sqlx.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+tracing.workspace = true
+
+[dev-dependencies]
+reqwest.workspace = true
+rmcp = { workspace = true, features = ["client", "transport-streamable-http-client-reqwest"] }
+async-trait.workspace = true
+futures = "0.3"
+tempfile.workspace = true
+tower.workspace = true
+wiremock.workspace = true
