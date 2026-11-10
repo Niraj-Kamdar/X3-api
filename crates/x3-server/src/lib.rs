@@ -32,7 +32,7 @@ pub mod mcp;
 pub mod service;
 
 pub use auth::Principal;
-pub use config::{Paths, Settings, DEFAULT_PORT};
+pub use config::{default_data_dir, Paths, Settings, BUNDLE_ID, DEFAULT_PORT};
 pub use db::{Db, NewToken, TokenInfo};
 pub use service::VoiceService;
 

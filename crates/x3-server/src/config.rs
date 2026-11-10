@@ -10,6 +10,26 @@ use x3_core::{AliasTable, Budgets, ModelId, Pricing};
 
 pub const DEFAULT_PORT: u16 = 47800;
 
+/// macOS bundle identifier; also the Keychain service name and data dir
+/// name. Placeholder until the owner picks the final ID.
+pub const BUNDLE_ID: &str = "dev.x3.voicestudio";
+
+/// Platform data dir: `~/Library/Application Support/<bundle id>` on macOS,
+/// `$XDG_DATA_HOME/x3` (or `~/.local/share/x3`) elsewhere.
+pub fn default_data_dir() -> PathBuf {
+    let home = std::env::var_os("HOME")
+        .map(PathBuf::from)
+        .unwrap_or_else(|| PathBuf::from("."));
+    if cfg!(target_os = "macos") {
+        home.join("Library/Application Support").join(BUNDLE_ID)
+    } else {
+        std::env::var_os("XDG_DATA_HOME")
+            .map(PathBuf::from)
+            .unwrap_or_else(|| home.join(".local/share"))
+            .join("x3")
+    }
+}
+
 /// User-editable settings (`settings.json` in the data dir).
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]
 pub struct Settings {
