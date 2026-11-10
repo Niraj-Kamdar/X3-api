@@ -7,7 +7,7 @@ members = [
     "crates/x3-apple",
     "crates/x3-server",
     "crates/x3-cli",
-    # "apps/desktop/src-tauri",
+    "apps/desktop/src-tauri",
 ]
 
 [workspace.package]

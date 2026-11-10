@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Merged into the generated Info.plist by the Tauri bundler. -->
+<plist version="1.0">
+<dict>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Voice Studio uses the microphone to transcribe your speech on this Mac when an app or agent asks it to listen.</string>
+  <!-- Menu-bar app: no Dock icon. -->
+  <key>LSUIElement</key>
+  <true/>
+</dict>
+</plist>

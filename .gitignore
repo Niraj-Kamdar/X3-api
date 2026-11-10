@@ -1,6 +1,6 @@
 /target
 node_modules/
-apps/desktop/ui/dist/
+apps/desktop/dist/
 apps/desktop/src-tauri/gen/
 .DS_Store
 *.sqlite
